@@ -12,30 +12,29 @@ class App extends Component {
     super(props);
     this.state = {
 
-      dataMunich: null, // Data array for Munich city
+      obtainedData: null, // Data array for Munich city, JSON object to be reaceived here
 
     }
   }
 
 
   componentDidMount() {
-                                  // On component mount, make an API call to the weather-data end-point: 
-   
-      axiosinstanceMunich.get('http://api.openweathermap.org/data/2.5/forecast?q=Munich,de&APPID=75f972b80e26f14fe6c920aa6a85ad57&cnt=40')
+    // On component mount, make an API call to the weather-data end-point: 
+    axiosinstanceMunich.get('http://api.openweathermap.org/data/2.5/forecast?q=Munich,de&APPID=75f972b80e26f14fe6c920aa6a85ad57&cnt=40')
       .then(response => {
         var obj = Object.values(response.data);
-        this.setState({ dataMunich: obj });
-        console.log(this.state.dataMunich);
+        this.setState({ obtainedData: obj });
+        console.log(this.state.obtainedData);
       })
       .catch(error => {
         console.log(error);
-      });                      
-  
+      });
+
   }
 
   render() {
-    return (  
-         this.state.dataMunich ? <Weather /> : <Home /> );
+    return (
+      this.state.obtainedData ? <Weather data={this.state.obtainedData} /> : <Home />);
 
   }
 

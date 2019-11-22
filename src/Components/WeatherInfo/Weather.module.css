@@ -1,0 +1,39 @@
+.main__wrapper{
+    max-width: 25%;
+    max-height: 45%; 
+    background-color: rgb(153, 153, 153);
+    margin: 5% auto; 
+    min-height: 40%; 
+    display: grid;
+    
+}
+
+.container{
+    display: grid;
+    grid-template-rows: 240px 240px 240px;
+} 
+
+.controls{
+    background-color: rgb(228, 218, 207);
+} 
+
+.controls__inner__container{
+ display:grid; 
+ grid-template-rows: 120px 120px; 
+ grid-template-columns: 340px;
+ min-width: 80%;
+ justify-content: center;
+ align-items: center;
+ 
+  
+} 
+
+span{
+    content:" "; 
+    display:inline-block; 
+    width:160px;
+}
+
+.controls__unit__options{
+   
+}
