@@ -31,9 +31,39 @@
 span{
     content:" "; 
     display:inline-block; 
-    width:160px;
+    width:89px;
 }
 
 .controls__unit__options{
-   
+   display: inline-block;
+} 
+
+.radio__left{
+    max-width: 26px;
+    margin: 0; 
+    padding: 0;
 }
+
+.radio__right{
+    max-width: 26px;
+    margin:0; 
+    padding: 0;
+}
+.controlLabel{
+    max-width: 120px;
+    
+} 
+
+.controls__arrows__options span{ 
+    width: 160px;
+
+}
+
+.arrowImage:hover{
+cursor: pointer;
+}
+
+.arrowImage:active{
+    background-color: rgb(245, 245, 245); 
+    cursor: pointer;
+    }

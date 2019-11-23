@@ -7,8 +7,7 @@ import classes from './Home.module.css';
 
 class Home extends Component {
 
-    
-  
+     
 
     render() {
         return (<Auxiliary>
