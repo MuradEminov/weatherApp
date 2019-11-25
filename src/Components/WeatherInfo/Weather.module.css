@@ -55,7 +55,7 @@ span{
 } 
 
 .controls__arrows__options span{ 
-    width: 160px;
+    width: 180px;
 
 }
 
@@ -68,3 +68,11 @@ cursor: pointer;
     background-color: rgb(245, 245, 245); 
     cursor: pointer;
     }
+
+
+.weather__panel__inner__container{
+
+display: grid;
+grid-template-columns: 240px;
+padding: 12px;
+}

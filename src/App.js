@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Auxiliary from '../src/hoc/Auxiliary';
 import Home from '../src/Components/Home/Home';
 import axiosinstanceMunich from '../src/Components/Axios/axiosInstanceMunich';
-import Weather from './Components/WeatherInfo/Weather';
+import Weather from './Components/WeatherInfo/Weather'; 
+import {BrowserRouter} from 'react-router-dom'; 
 
 
 
@@ -33,8 +34,8 @@ class App extends Component {
   }
 
   render() {
-    return (
-      this.state.obtainedData ? <Weather data={this.state.obtainedData} /> : <Home />);
+    return ( 
+      this.state.obtainedData ? <BrowserRouter><Weather data={this.state.obtainedData} /></BrowserRouter> : <Home />);
 
   }
 
