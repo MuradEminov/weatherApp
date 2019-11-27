@@ -9,9 +9,8 @@ import leftArrow from '../../icons/left-arrow.png';
 import rightArrow from '../../icons/right-arrow.png';
 import WeatherDataPage1 from '../WeatherData/WeatherDataPage1';
 import WeatherDataPage2 from '../WeatherData/WeatherDataPage2';
-
 import { Route, Link } from 'react-router-dom';
-
+import Chart from '../../Components/Chart/Chart'; 
 
 
 class Weather extends Component {
@@ -21,7 +20,7 @@ class Weather extends Component {
         this.state = {
             currentSelection: 'celcius',
             celciusChecked: true,
-            fahrenheitChecked: false,
+            fahrenheitChecked: false, 
             weatherData: this.props.data, // received weather data
             data_page_1: [],  // data sliced for page no.1 (3 cards data array) 
             data_page_2: []
@@ -35,11 +34,11 @@ class Weather extends Component {
     componentDidMount() {
         const dailyData = this.state.weatherData[3].filter(reading => reading.dt_txt.includes("18:00:00"));
         var data_for_page1 = dailyData.slice(0, 3);
-
         var data_for_page2 = dailyData.slice(3, 5);
         this.setState({ data_page_1: data_for_page1 });
         this.setState({ data_page_2: data_for_page2 });
-        console.log(dailyData);
+        console.log(dailyData); 
+        console.log(this.state.weatherData); 
         console.log(this.state.data_page_1, this.state.data_page_2);
         console.log(this.state.currentSelection);
 
@@ -106,7 +105,9 @@ class Weather extends Component {
 
                             </div>
                         </div>
-                        <div className={classes.daily__temperature}></div>
+                        <div className={classes.daily__temperature}> 
+                                <Chart data={this.props.data}/>
+                        </div>
 
                     </div>
 
