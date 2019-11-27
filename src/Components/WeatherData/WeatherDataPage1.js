@@ -12,18 +12,41 @@ class WeatherDataPage1 extends Component {
 
     constructor(props) {
         super(props);
-
+      
     }
 
-    render() {
+    componentDidMount(){
+        console.log(this.props.selection);
+    }
+    
+   
 
-        const cards = this.props.data.map(function (item) {
-            return (
-                <Card celc={Math.round(item.main.temp-273.15)}/>                                   
+    render() { 
+        var cards; 
+        if (this.props.selection){
+             cards = this.props.data.map(function (item) { 
+                return ( 
+                    <Card val={Math.round(item.main.temp-273.15)}/>                                   
+    
+                )
+            })
+        } 
 
-            )
-        })
+        else{
+             cards = this.props.data.map(function (item) { 
+                return ( 
+                    <Card val={Math.round((item.main.temp * (9/5) - 459.67))} />                                   
+    
+                )
+            })
 
+        }
+      
+  
+
+
+
+        
         return (
             <Auxiliary> 
                 <div className={classes.display__grid}>

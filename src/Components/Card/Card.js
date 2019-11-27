@@ -13,7 +13,11 @@ class Card extends Component {
        return(
            <div className={classes.card__container}>
                <p>Temperature: </p> 
-                   {this.props.celc + "C"}
+                   {    
+                    this.props.val  
+                   }
+                   
+                   
                <p>Date:</p> 
 
            </div>

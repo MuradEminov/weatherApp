@@ -20,9 +20,8 @@ class Weather extends Component {
             celciusChecked: true,
             fahrenheitChecked: false,
             weatherData: this.props.data, // received weather data
-            dailyData: [],  //filtered data: 5 days data
-            celcius_data_Page1: []   //data for page1 in celclius
-
+            data_page_1: [],  // data sliced for page no.1 (3 cards data array) 
+            data_page_2: []
 
         }
         //Refs for celcius and fahrenheit selection options 
@@ -31,11 +30,16 @@ class Weather extends Component {
     } 
 
     componentDidMount(){
-        const dailyData = this.state.weatherData[3].filter(reading => reading.dt_txt.includes("18:00:00"));   
-             
-        this.setState({dailyData:dailyData});  
+        const dailyData = this.state.weatherData[3].filter(reading => reading.dt_txt.includes("18:00:00")); 
+        var data_for_page1 = dailyData.slice(0, 3); 
+       
+        var data_for_page2 = dailyData.slice(3, 5);    
+        this.setState({data_page_1: data_for_page1}); 
+        this.setState({data_page_2: data_for_page2});  
         console.log(dailyData); 
-      
+        console.log(this.state.data_page_1, this.state.data_page_2);
+        console.log(this.state.currentSelection);
+        
         
         
 
@@ -45,10 +49,12 @@ class Weather extends Component {
 
         if (event.target.name === "fahrenheit") {
             this.setState({ currentSelection: 'fahrenheit', celciusChecked: false, fahrenheitChecked: true });
+            
 
         }
         if (event.target.name === "celcius") {
             this.setState({ currentSelection: 'celcius', celciusChecked: true, fahrenheitChecked: false });
+            console.log("celcius checked");
         }
 
     }
@@ -93,7 +99,8 @@ class Weather extends Component {
                         </div>
                         <div className={classes.weather__panel}>
                             <div className={classes.weather__panel__inner__container}>
-                                <WeatherDataPage1 data={this.state.dailyData}/>
+                                <WeatherDataPage1 data={this.state.data_page_1} selection={this.state.celciusChecked}/>
+                                {/* <WeatherDataPage1 data={this.state.data_page_2}/> */}
                              </div>
                         </div>
                         <div className={classes.daily__temperature}>Daily temperature</div>

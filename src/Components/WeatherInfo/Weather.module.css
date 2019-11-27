@@ -73,8 +73,9 @@ cursor: pointer;
 .weather__panel__inner__container{
 
 display: grid;
-grid-template-columns: 140px 140px 140px;
+grid-template-rows: 240px;
 grid-gap: 1em;
 padding: 12px;
 justify-content: center;
+align-content: center;
 }
