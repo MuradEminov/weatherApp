@@ -26,7 +26,7 @@ class WeatherDataPage1 extends Component {
         if (this.props.selection){
              cards = this.props.data.map(function (item) { 
                 return ( 
-                    <Card val={Math.round(item.main.temp-273.15)}/>                                   
+                    <Card val={Math.round(item.main.temp-273.15)} date = {item.dt_txt}/>                                   
     
                 )
             })
@@ -35,7 +35,7 @@ class WeatherDataPage1 extends Component {
         else{
              cards = this.props.data.map(function (item) { 
                 return ( 
-                    <Card val={Math.round((item.main.temp * (9/5) - 459.67))} />                                   
+                    <Card val={Math.round((item.main.temp * (9/5) - 459.67))} date = {item.dt_txt} />                                   
     
                 )
             })

@@ -10,6 +10,9 @@ class Card extends Component {
     }
 
     render() {
+       var date = this.props.date.substring(0, 10).split("-").reverse().join("-"); 
+
+       
        return(
            <div className={classes.card__container}>
                <p>Temperature: </p> 
@@ -17,8 +20,8 @@ class Card extends Component {
                     this.props.val  
                    }
                    
-                   
                <p>Date:</p> 
+               {date}
 
            </div>
        )   

@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 .card__container{  
     text-align: center;
-    background-color: azure; 
+    background-color: azure;  
+    background-image: url(../../Images/background.jpg);
     max-width: 130px; 
     margin: 0;
-    padding: 8px; 
+    padding: 25px; 
     max-height: 140px;
-
+    font-family: 'Roboto', sans-serif; 
+    color:rgb(92, 133, 221); 
+    font-size: 1.1em; 
+    
 }
