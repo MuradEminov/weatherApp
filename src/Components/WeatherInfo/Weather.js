@@ -50,11 +50,7 @@ class Weather extends Component {
 
 
     render() { 
-        const dataPage1 = this.state.dailyData.map(function(item){ 
-            
-            return (<WeatherDataPage1 data={item.main.temp} />)
-        })
-
+        
         return (
             <Auxiliary>
                 <div className={classes.main__wrapper}>
@@ -92,9 +88,7 @@ class Weather extends Component {
                         </div>
                         <div className={classes.weather__panel}>
                             <div className={classes.weather__panel__inner__container}>
-                                <div>
-                                   {dataPage1}
-                                </div>
+                                <WeatherDataPage1 data={this.state.dailyData}/>
                              </div>
                         </div>
                         <div className={classes.daily__temperature}>Daily temperature</div>
