@@ -19,8 +19,10 @@ class Weather extends Component {
             currentSelection: 'celcius',
             celciusChecked: true,
             fahrenheitChecked: false,
-            weatherData: this.props.data, 
-            dailyData: []
+            weatherData: this.props.data, // received weather data
+            dailyData: [],  //filtered data: 5 days data
+            celcius_data_Page1: []   //data for page1 in celclius
+
 
         }
         //Refs for celcius and fahrenheit selection options 
@@ -29,9 +31,12 @@ class Weather extends Component {
     } 
 
     componentDidMount(){
-        const dailyData = this.state.weatherData[3].filter(reading => reading.dt_txt.includes("18:00:00"));  
-        console.log(dailyData);      
+        const dailyData = this.state.weatherData[3].filter(reading => reading.dt_txt.includes("18:00:00"));   
+             
         this.setState({dailyData:dailyData});  
+        console.log(dailyData); 
+      
+        
         
 
     }

@@ -5,6 +5,7 @@ import Auxiliary from '../../hoc/Auxiliary';
 // import Typography from '@material-ui/core/Typography';
 // import classes from '../../Components/WeatherData/WeatherDataPage1.module.css'; 
 import Card from '../Card/Card';
+import classes from '../../Components/WeatherData/WeatherDataPage1.module.css';
 
 
 class WeatherDataPage1 extends Component {
@@ -18,14 +19,17 @@ class WeatherDataPage1 extends Component {
 
         const cards = this.props.data.map(function (item) {
             return (
-                <Card temp={item.main.temp}/>                                   
+                <Card celc={Math.round(item.main.temp-273.15)}/>                                   
 
             )
         })
 
         return (
-            <Auxiliary>
+            <Auxiliary> 
+                <div className={classes.display__grid}>
                 {cards}
+                </div>
+                
             </Auxiliary>
 
         )
