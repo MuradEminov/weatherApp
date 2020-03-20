@@ -1,3 +1,6 @@
+#View the project on Netlify: https://practical-elion-6097bd.netlify.com/
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
